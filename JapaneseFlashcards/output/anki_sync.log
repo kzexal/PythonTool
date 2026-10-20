@@ -1,0 +1,98 @@
+Traceback (most recent call last):
+  File "C:\Users\buidu\OneDrive\M�y t�nh\pythontool\JapaneseFlashcards\sync_anki.py", line 228, in <module>
+    main_sync()
+    ~~~~~~~~~^^
+  File "C:\Users\buidu\OneDrive\M�y t�nh\pythontool\JapaneseFlashcards\sync_anki.py", line 92, in main_sync
+    log("B\u1eaft \u0111\u1ea7u \u0111\u1ed3ng b\u1ed9 Excel \u2192 Anki.")
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\buidu\OneDrive\M�y t�nh\pythontool\JapaneseFlashcards\sync_anki.py", line 29, in log
+    print(line, flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\buidu\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1eaf' in position 23: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\buidu\OneDrive\M�y t�nh\pythontool\JapaneseFlashcards\sync_anki.py", line 231, in <module>
+    log(f"L\u1ed6I \u0110\u1ed2NG B\u1ed8: {type(exc).__name__}: {exc}")
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\buidu\OneDrive\M�y t�nh\pythontool\JapaneseFlashcards\sync_anki.py", line 29, in log
+    print(line, flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\buidu\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ed6' in position 23: character maps to <undefined>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\buidu\OneDrive\M�y t�nh\pythontool\JapaneseFlashcards\sync_anki.py", line 233, in <module>
+    print(f"L\u1ed6I \u0110\u1ed2NG B\u1ed8: {type(exc).__name__}: {exc}", flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\buidu\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u1ed6' in position 1: character maps to <undefined>
+[2026-10-20 21:01:47] B\u1eaft \u0111\u1ea7u \u0111\u1ed3ng b\u1ed9 Excel -> Anki.
+[2026-10-20 21:01:47] \u0110\xe3 k\u1ebft n\u1ed1i AnkiConnect phi\xean b\u1ea3n 6.
+[2026-10-20 21:01:48] Ho\xe0n t\u1ea5t: th\xeam 4, c\u1eadp nh\u1eadt 1, kh\xf4ng \u0111\u1ed5i 0, b\u1ecf qua do tr\xf9ng trong Anki 0.
+[2026-10-20 21:01:48] Excel: 5 t\u1eeb h\u1ee3p l\u1ec7; 0 d\xf2ng tr\xf9ng; 1 d\xf2ng b\u1ecb b\u1ecf qua; 1 c\u1ea3nh b\xe1o/l\u1ed7i ki\u1ec3m tra.
+[2026-10-20 21:01:48] C\xf3 c\u1ea3nh b\xe1o t\u1eeb b\u01b0\u1edbc ki\u1ec3m tra Excel; xem output/import_report.txt.
+[2026-10-20 21:01:48] Kh\xf4ng x\xf3a ghi ch\xfa n\xe0o kh\u1ecfi Anki.
+[2026-10-20 21:04:09] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 21:04:09] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 21:04:10] Hoàn tất: thêm 0, cập nhật 0, không đổi 5, bỏ qua do trùng trong Anki 0.
+[2026-10-20 21:04:10] Excel: 5 từ hợp lệ; 0 dòng trùng; 1 dòng bị bỏ qua; 1 cảnh báo/lỗi kiểm tra.
+[2026-10-20 21:04:10] Có cảnh báo từ bước kiểm tra Excel; xem output/import_report.txt.
+[2026-10-20 21:04:10] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 21:09:36] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 21:09:36] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 21:09:36] Đã tạo bộ thẻ 'Japanese Vocabulary'.
+[2026-10-20 21:09:37] Hoàn tất: thêm 5, cập nhật 0, không đổi 0, bỏ qua do trùng trong Anki 0.
+[2026-10-20 21:09:37] Excel: 5 từ hợp lệ; 0 dòng trùng; 1 dòng bị bỏ qua; 1 cảnh báo/lỗi kiểm tra.
+[2026-10-20 21:09:37] Có cảnh báo từ bước kiểm tra Excel; xem output/import_report.txt.
+[2026-10-20 21:09:37] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 21:32:48] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 21:32:48] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 21:32:49] Hoàn tất: thêm 0, cập nhật 0, không đổi 5, bỏ qua do trùng trong Anki 0.
+[2026-10-20 21:32:49] Excel: 5 từ hợp lệ; 0 dòng trùng; 1 dòng bị bỏ qua; 1 cảnh báo/lỗi kiểm tra.
+[2026-10-20 21:32:49] Có cảnh báo từ bước kiểm tra Excel; xem output/import_report.txt.
+[2026-10-20 21:32:49] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 21:48:43] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 21:48:43] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 21:48:43] LỖI ĐỒNG BỘ: ValueError: Thieu cot bat buoc: Vietnamese
+[2026-10-20 21:50:49] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 21:50:49] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 21:50:49] Đã tạo bộ thẻ 'Japanese Vocabulary'.
+[2026-10-20 21:51:04] Hoàn tất: thêm 198, cập nhật 0, không đổi 0, bỏ qua do trùng trong Anki 0.
+[2026-10-20 21:51:04] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
+[2026-10-20 21:51:04] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 22:03:44] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 22:03:44] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 22:03:44] Hoàn tất: thêm 0, cập nhật 0, không đổi 198, bỏ qua do trùng trong Anki 0.
+[2026-10-20 22:03:44] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
+[2026-10-20 22:03:44] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 22:04:55] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 22:04:55] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 22:04:56] Hoàn tất: thêm 0, cập nhật 0, không đổi 198, bỏ qua do trùng trong Anki 0.
+[2026-10-20 22:04:56] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
+[2026-10-20 22:04:56] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 22:09:57] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 22:09:57] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 22:09:57] Hoàn tất: thêm 0, cập nhật 0, không đổi 198, bỏ qua do trùng trong Anki 0.
+[2026-10-20 22:09:57] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
+[2026-10-20 22:09:57] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 22:35:27] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 22:35:28] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 22:35:28] Hoàn tất: thêm 0, cập nhật 0, không đổi 198, bỏ qua do trùng trong Anki 0.
+[2026-10-20 22:35:28] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
+[2026-10-20 22:35:28] Không xóa ghi chú nào khỏi Anki.
+[2026-10-20 22:38:15] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-20 22:38:16] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-20 22:38:16] Hoàn tất: thêm 0, cập nhật 0, không đổi 198, bỏ qua do trùng trong Anki 0.
+[2026-10-20 22:38:16] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
+[2026-10-20 22:38:16] Không xóa ghi chú nào khỏi Anki.
