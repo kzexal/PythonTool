@@ -1,0 +1,12 @@
+JAPANESE FLASHCARDS - IMPORT REPORT
+Thoi gian: 2026-10-20 13:39:04
+File nguon: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\input\vocabulary.xlsx
+Trang thai xuat: THANH CONG
+So tu hop le: 5
+So the du kien: 10
+So dong trung: 1
+So dong bi bo qua: 1
+So canh bao/loi: 1
+
+CHI TIET:
+[TRUNG] Dong 4: '海' da co o dong 2; bo qua.
