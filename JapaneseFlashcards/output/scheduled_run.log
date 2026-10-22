@@ -75,3 +75,46 @@ Dong trung: 0
 Dong bi bo qua: 0
 APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
 Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 114
+    	raise ValueError(
+TabError: inconsistent use of tabs and spaces in indentation
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 114
+    raise ValueError(
+IndentationError: expected an indented block after 'if' statement on line 113
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 113
+    if "Vocabulary" not in workbook.sheetnames:
+    ^^
+IndentationError: expected an indented block after 'try' statement on line 112
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 114
+    	raise ValueError(
+TabError: inconsistent use of tabs and spaces in indentation
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 114
+    	raise ValueError(
+TabError: inconsistent use of tabs and spaces in indentation
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 112
+    try:
+        ^
+IndentationError: unindent does not match any outer indentation level
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 117
+    	sheet = workbook["Vocabulary"]
+    ^
+TabError: inconsistent use of tabs and spaces in indentation
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 118
+    iterator = sheet.iter_rows(values_only=True)
+IndentationError: unexpected indent
+
+=== KET QUA ===
+Tu hop le: 198
+The du kien: 396
+Dong trung: 0
+Dong bi bo qua: 0
+APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
+Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt
+
+=== KET QUA ===
+Tu hop le: 198
+The du kien: 396
+Dong trung: 0
+Dong bi bo qua: 0
+APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
+Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt

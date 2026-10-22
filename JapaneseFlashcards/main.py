@@ -108,9 +108,14 @@ def read_excel():
         read_only=True,
         data_only=True,
     )
-
+    
     try:
-        sheet = workbook[workbook.sheetnames[0]]
+        if "Vocabulary" not in workbook.sheetnames:
+            raise ValueError(
+                "Khong tim thay sheet Vocabulary trong file Excel."
+            )
+
+        sheet = workbook["Vocabulary"]
         iterator = sheet.iter_rows(values_only=True)
         header_row = next(iterator, None)
 
