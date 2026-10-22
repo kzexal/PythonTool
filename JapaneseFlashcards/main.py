@@ -38,6 +38,8 @@ OPTIONAL_COLUMNS = [
     "JLPT",
     "Notes",
     "Tags",
+"Radicals",   # Cột chứa các bộ thủ
+    "Mnemonics",  # Cột chứa câu chuyện ghi nhớ
 ]
 
 VALID_JLPT = {"N5", "N4", "N3", "N2", "N1"}
@@ -159,6 +161,7 @@ def read_excel():
                 return clean(row[index])
 
             # Bo qua dong trong hoan toan
+           # Bo qua dong trong hoan toan
             if not any(clean(value) for value in row):
                 continue
 
@@ -171,6 +174,8 @@ def read_excel():
                 "JLPT": get_value("JLPT").upper(),
                 "Notes": get_value("Notes"),
                 "Tags": parse_tags(get_value("Tags")),
+                "Radicals": get_value("Radicals"),
+                "Mnemonics": get_value("Mnemonics"),
                 "row_number": row_number,
             }
 
@@ -256,6 +261,8 @@ def create_model():
             {"name": "Example"},
             {"name": "ExampleMeaning"},
             {"name": "Notes"},
+            {"name": "Radicals"},   # Đã thêm trường Radicals
+            {"name": "Mnemonics"},  # Đã thêm trường Mnemonics
         ],
         templates=[
             {
@@ -279,31 +286,17 @@ def create_model():
                     {{#Notes}}
                     <div class="notes">{{Notes}}</div>
                     {{/Notes}}
+                    
+                    <!-- ĐÂY LÀ PHẦN HIỂN THỊ BỘ THỦ VÀ CÁCH NHỚ ĐƯỢC THÊM VÀO -->
+                    {{#Radicals}}
+                    <div class="radicals">🧩 Bộ thủ: {{Radicals}}</div>
+                    {{/Radicals}}
+                    {{#Mnemonics}}
+                    <div class="mnemonics">💡 Cách nhớ: {{Mnemonics}}</div>
+                    {{/Mnemonics}}
                 """,
-            },
-            {
-                "name": "Vietnamese to Japanese",
-                "qfmt": """
-                    <div class="meaning">{{Vietnamese}}</div>
-                """,
-                "afmt": """
-                    {{FrontSide}}
-                    <hr id="answer">
-                    <div class="jp">{{Japanese}}</div>
-                    <div class="reading">{{Reading}}</div>
-                    {{#Example}}
-                    <div class="example">{{Example}}</div>
-                    {{/Example}}
-                    {{#ExampleMeaning}}
-                    <div class="example-meaning">
-                        {{ExampleMeaning}}
-                    </div>
-                    {{/ExampleMeaning}}
-                    {{#Notes}}
-                    <div class="notes">{{Notes}}</div>
-                    {{/Notes}}
-                """,
-            },
+            }
+            # Đã xóa phần template "Vietnamese to Japanese" ở đây
         ],
         css="""
             .card {
@@ -347,6 +340,23 @@ def create_model():
                 color: #777;
                 font-size: 15px;
             }
+
+            /* CSS trang trí cho bộ thủ và cách nhớ */
+            .radicals {
+                margin-top: 15px;
+                font-size: 18px;
+                color: #d35400; 
+                font-weight: bold;
+                text-align: left;
+            }
+            
+            .mnemonics {
+                margin-top: 5px;
+                font-size: 16px;
+                color: #2980b9; 
+                font-style: italic;
+                text-align: left;
+            }
         """,
     )
 
@@ -360,6 +370,7 @@ def create_deck(words):
     deck = genanki.Deck(DECK_ID, DECK_NAME)
 
     for word in words:
+    
         fields = [
             html_escape(word["Japanese"]),
             html_escape(word["Reading"]),
@@ -367,6 +378,8 @@ def create_deck(words):
             html_escape(word["Example"]),
             html_escape(word["ExampleMeaning"]),
             html_escape(word["Notes"]),
+            html_escape(word["Radicals"]),  # Thêm dòng này
+            html_escape(word["Mnemonics"]), # Thêm dòng này
         ]
 
         # ID ghi chu khong thay doi khi sua nghia/vi du.

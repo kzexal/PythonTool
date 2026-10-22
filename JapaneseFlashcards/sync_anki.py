@@ -23,19 +23,21 @@ LOG_FILE = OUTPUT_DIR / "anki_sync.log"
 
 
 
+
 def log(message):
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     line = f"[{datetime.now():%Y-%m-%d %H:%M:%S}] {message}"
 
-    # Luôn ghi log bằng UTF-8.
+    # Ghi log bang UTF-8
     with LOG_FILE.open("a", encoding="utf-8") as f:
         f.write(line + "\n")
 
-    # Lỗi hiển thị trên console không được làm dừng đồng bộ.
+    # In ra console; khong de loi console lam dung dong bo
     try:
         print(line, flush=True)
     except (UnicodeEncodeError, OSError):
         pass
+
 
 
 def anki_request(action, params=None):
@@ -44,30 +46,38 @@ def anki_request(action, params=None):
         "version": 6,
         "params": params or {}
     }, ensure_ascii=False).encode("utf-8")
+
     request = urllib.request.Request(
         ANKI_CONNECT_URL,
         data=payload,
         headers={"Content-Type": "application/json"}
     )
+
     with urllib.request.urlopen(request, timeout=5) as response:
         result = json.loads(response.read().decode("utf-8"))
+
     if result.get("error") is not None:
-        raise RuntimeError(f"AnkiConnect '{action}': {result['error']}")
+        raise RuntimeError(
+            f"AnkiConnect '{action}': {result['error']}"
+        )
+
     return result.get("result")
 
 
 def wait_for_anki(timeout_seconds=60):
     deadline = time.time() + timeout_seconds
     last_error = None
+
     while time.time() < deadline:
         try:
             return anki_request("version")
         except Exception as exc:
             last_error = exc
             time.sleep(2)
+
     raise RuntimeError(
-        f"Không kết nối được AnkiConnect sau {timeout_seconds} giây. "
-        f"Hãy kiểm tra Anki và add-on AnkiConnect. Chi tiết: {last_error}"
+        f"Khong ket noi duoc AnkiConnect sau {timeout_seconds} giay. "
+        f"Kiem tra Anki va add-on AnkiConnect. Chi tiet: {last_error}"
     )
 
 
@@ -88,63 +98,97 @@ def make_fields(word):
 
 
 def identity(japanese, reading):
-    return (main.normalize(japanese), main.normalize(reading))
+    return (
+        main.normalize(japanese),
+        main.normalize(reading)
+    )
 
 
 def main_sync():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    log("Bắt đầu đồng bộ Excel -> Anki.")
+    log("Bat dau dong bo Excel -> Anki.")
 
     version = wait_for_anki()
-    log(f"Đã kết nối AnkiConnect phiên bản {version}.")
+    log(f"Da ket noi AnkiConnect phien ban {version}.")
 
     words, issues, duplicate_count, invalid_count = main.read_excel()
+
     if not words:
         raise RuntimeError(
-            "Không có từ hợp lệ trong Excel; dừng đồng bộ để tránh thao tác nhầm."
+            "Khong co tu hop le trong Excel; dung dong bo de tranh thao tac nham."
         )
 
     deck_names = anki_request("deckNames") or []
+
     if DECK_NAME not in deck_names:
         anki_request("createDeck", {"deck": DECK_NAME})
-        log(f"Đã tạo bộ thẻ '{DECK_NAME}'.")
+        log(f"Da tao bo the '{DECK_NAME}'.")
 
     model_names = anki_request("modelNames") or []
+
     if MODEL_NAME not in model_names:
         raise RuntimeError(
-            f"Không tìm thấy loại ghi chú '{MODEL_NAME}'. "
-            "Hãy nhập file APKG của dự án vào Anki ít nhất một lần trước."
+            f"Khong tim thay loai ghi chu '{MODEL_NAME}'. "
+            "Hay nhap file APKG cua du an vao Anki it nhat mot lan truoc."
         )
 
-    actual_fields = anki_request("modelFieldNames", {"modelName": MODEL_NAME}) or []
-    missing_fields = [name for name in FIELD_NAMES if name not in actual_fields]
-    if missing_fields:
-        raise RuntimeError("Loại ghi chú hiện tại thiếu trường: " + ", ".join(missing_fields))
+    actual_fields = anki_request(
+        "modelFieldNames",
+        {"modelName": MODEL_NAME}
+    ) or []
 
-    note_ids = anki_request("findNotes", {"query": f'note:"{MODEL_NAME}"'}) or []
+    missing_fields = [
+        name for name in FIELD_NAMES
+        if name not in actual_fields
+    ]
+
+    if missing_fields:
+        raise RuntimeError(
+            "Loai ghi chu hien tai thieu truong: "
+            + ", ".join(missing_fields)
+        )
+
+    note_ids = anki_request(
+        "findNotes",
+        {"query": f'note:"{MODEL_NAME}"'}
+    ) or []
+
     existing_notes = []
+
     for start in range(0, len(note_ids), 200):
         existing_notes.extend(
-            anki_request("notesInfo", {"notes": note_ids[start:start + 200]}) or []
+            anki_request(
+                "notesInfo",
+                {"notes": note_ids[start:start + 200]}
+            ) or []
         )
 
     by_identity = {}
+
     for note in existing_notes:
-        key = identity(field_value(note, "Japanese"), field_value(note, "Reading"))
+        key = identity(
+            field_value(note, "Japanese"),
+            field_value(note, "Reading")
+        )
         by_identity.setdefault(key, []).append(note)
 
     added = updated = unchanged = ambiguous = 0
 
     for word in words:
-        key = identity(word["Japanese"], word["Reading"])
+        key = identity(
+            word["Japanese"],
+            word["Reading"]
+        )
+
         fields = make_fields(word)
         matches = by_identity.get(key, [])
 
         if len(matches) > 1:
             ambiguous += 1
             log(
-                f"BỎ QUA: có {len(matches)} ghi chú trùng định danh "
-                f"Japanese={word['Japanese']!r}, Reading={word['Reading']!r}."
+                f"BO QUA: co {len(matches)} ghi chu trung dinh danh "
+                f"Japanese={word['Japanese']!r}, "
+                f"Reading={word['Reading']!r}."
             )
             continue
 
@@ -157,49 +201,89 @@ def main_sync():
                     "tags": word["Tags"],
                 }]
             })
+
             new_ids = result or []
+
             if not new_ids or new_ids[0] is None:
-                log(f"CẢNH BÁO: Anki không thêm được từ {word['Japanese']!r}; có thể đã tồn tại.")
+                log(
+                    f"CANH BAO: Anki khong them duoc tu "
+                    f"{word['Japanese']!r}; co the tu da ton tai."
+                )
                 continue
+
             added += 1
+
             by_identity[key] = [{
                 "noteId": new_ids[0],
-                "fields": {name: {"value": fields[name]} for name in FIELD_NAMES},
+                "fields": {
+                    name: {"value": fields[name]}
+                    for name in FIELD_NAMES
+                },
                 "tags": list(word["Tags"]),
             }]
+
             continue
 
         note = matches[0]
         note_id = note["noteId"]
-        old_fields = {name: field_value(note, name) for name in FIELD_NAMES}
+
+        old_fields = {
+            name: field_value(note, name)
+            for name in FIELD_NAMES
+        }
+
         changed_fields = {
-            name: value for name, value in fields.items()
+            name: value
+            for name, value in fields.items()
             if old_fields.get(name, "") != value
         }
+
         if changed_fields:
             anki_request("updateNoteFields", {
-                "note": {"id": note_id, "fields": changed_fields}
+                "note": {
+                    "id": note_id,
+                    "fields": changed_fields
+                }
             })
             updated += 1
         else:
             unchanged += 1
 
         current_tags = set(note.get("tags", []))
-        tags_to_add = [tag for tag in word["Tags"] if tag not in current_tags]
+
+        tags_to_add = [
+            tag for tag in word["Tags"]
+            if tag not in current_tags
+        ]
+
         if tags_to_add:
-            anki_request("addTags", {"notes": [note_id], "tags": " ".join(tags_to_add)})
+            anki_request(
+                "addTags",
+                {
+                    "notes": [note_id],
+                    "tags": " ".join(tags_to_add)
+                }
+            )
 
     log(
-        f"Hoàn tất: thêm {added}, cập nhật {updated}, "
-        f"không đổi {unchanged}, bỏ qua do trùng trong Anki {ambiguous}."
+        f"Hoan tat: them {added}, cap nhat {updated}, "
+        f"khong doi {unchanged}, bo qua do trung trong Anki {ambiguous}."
     )
+
     log(
-        f"Excel: {len(words)} từ hợp lệ; {duplicate_count} dòng trùng; "
-        f"{invalid_count} dòng bị bỏ qua; {len(issues)} cảnh báo/lỗi kiểm tra."
+        f"Excel: {len(words)} tu hop le; "
+        f"{duplicate_count} dong trung; "
+        f"{invalid_count} dong bi bo qua; "
+        f"{len(issues)} canh bao/loi kiem tra."
     )
+
     if issues:
-        log("Có cảnh báo từ bước kiểm tra Excel; xem output/import_report.txt.")
-    log("Không xóa ghi chú nào khỏi Anki.")
+        log(
+            "Co canh bao tu buoc kiem tra Excel; "
+            "xem output/import_report.txt."
+        )
+
+    log("Khong xoa ghi chu nao khoi Anki.")
 
 
 
@@ -208,7 +292,8 @@ if __name__ == "__main__":
         main_sync()
     except Exception as exc:
         try:
-            log(f"LỖI ĐỒNG BỘ: {type(exc).__name__}: {exc}")
+            log(f"LOI DONG BO: {type(exc).__name__}: {exc}")
         except Exception:
             pass
+
 

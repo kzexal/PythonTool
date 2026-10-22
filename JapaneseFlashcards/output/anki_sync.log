@@ -96,3 +96,41 @@ UnicodeEncodeError: 'charmap' codec can't encode character '\u1ed6' in position 
 [2026-10-20 22:38:16] Hoàn tất: thêm 0, cập nhật 0, không đổi 198, bỏ qua do trùng trong Anki 0.
 [2026-10-20 22:38:16] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
 [2026-10-20 22:38:16] Không xóa ghi chú nào khỏi Anki.
+[2026-10-21 08:41:22] Bắt đầu đồng bộ Excel -> Anki.
+[2026-10-21 08:41:23] Đã kết nối AnkiConnect phiên bản 6.
+[2026-10-21 08:41:23] Hoàn tất: thêm 0, cập nhật 0, không đổi 198, bỏ qua do trùng trong Anki 0.
+[2026-10-21 08:41:23] Excel: 198 từ hợp lệ; 0 dòng trùng; 0 dòng bị bỏ qua; 0 cảnh báo/lỗi kiểm tra.
+[2026-10-21 08:41:23] Không xóa ghi chú nào khỏi Anki.
+[2026-10-21 08:46:58] Bat dau dong bo Excel -> Anki.
+[2026-10-21 08:46:58] Da ket noi AnkiConnect phien ban 6.
+[2026-10-21 08:46:59] Hoan tat: them 0, cap nhat 0, khong doi 198, bo qua do trung trong Anki 0.
+[2026-10-21 08:46:59] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-21 08:46:59] Khong xoa ghi chu nao khoi Anki.
+[2026-10-21 19:17:13] Bat dau dong bo Excel -> Anki.
+[2026-10-21 19:17:13] Da ket noi AnkiConnect phien ban 6.
+[2026-10-21 19:17:16] Hoan tat: them 0, cap nhat 0, khong doi 198, bo qua do trung trong Anki 0.
+[2026-10-21 19:17:16] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-21 19:17:16] Khong xoa ghi chu nao khoi Anki.
+[2026-10-21 19:17:35] Bat dau dong bo Excel -> Anki.
+[2026-10-21 19:17:35] Da ket noi AnkiConnect phien ban 6.
+[2026-10-21 19:17:36] Hoan tat: them 0, cap nhat 0, khong doi 198, bo qua do trung trong Anki 0.
+[2026-10-21 19:17:36] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-21 19:17:36] Khong xoa ghi chu nao khoi Anki.
+[2026-10-21 21:36:17] Bat dau dong bo Excel -> Anki.
+[2026-10-21 21:36:17] Da ket noi AnkiConnect phien ban 6.
+[2026-10-21 21:36:17] Hoan tat: them 0, cap nhat 0, khong doi 198, bo qua do trung trong Anki 0.
+[2026-10-21 21:36:17] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-21 21:36:17] Khong xoa ghi chu nao khoi Anki.
+[2026-10-22 11:37:39] Bat dau dong bo Excel -> Anki.
+[2026-10-22 11:37:39] Da ket noi AnkiConnect phien ban 6.
+[2026-10-22 11:37:39] Hoan tat: them 0, cap nhat 0, khong doi 198, bo qua do trung trong Anki 0.
+[2026-10-22 11:37:39] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-22 11:37:39] Khong xoa ghi chu nao khoi Anki.
+[2026-10-22 12:42:50] Bat dau dong bo Excel -> Anki.
+[2026-10-22 12:42:50] Da ket noi AnkiConnect phien ban 6.
+[2026-10-22 12:42:50] Hoan tat: them 0, cap nhat 0, khong doi 198, bo qua do trung trong Anki 0.
+[2026-10-22 12:42:50] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-22 12:42:50] Khong xoa ghi chu nao khoi Anki.
+[2026-10-22 12:54:36] Bat dau dong bo Excel -> Anki.
+[2026-10-22 12:54:36] Da ket noi AnkiConnect phien ban 6.
+[2026-10-22 12:54:36] LOI DONG BO: RuntimeError: Khong tim thay loai ghi chu 'Japanese Vocabulary Model'. Hay nhap file APKG cua du an vao Anki it nhat mot lan truoc.

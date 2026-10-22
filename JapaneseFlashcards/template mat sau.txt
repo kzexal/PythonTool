@@ -1,0 +1,28 @@
+
+Mặt sau
+                    {{FrontSide}}
+                    <hr id="answer">
+                   <div class="reading">{{Reading}}</div>
+{{Audio}}
+                    <div class="meaning">{{Vietnamese}}</div>
+                    {{#Example}}
+                   <div class="example">{{Example}}</div>
+{{ExampleAudio}}
+                    {{/Example}}
+                    {{#ExampleMeaning}}
+                    <div class="example-meaning">
+                        {{ExampleMeaning}}
+                    </div>
+                    {{/ExampleMeaning}}
+                    {{#Notes}}
+                    <div class="notes">{{Notes}}</div>
+                    {{/Notes}}
+                    
+                    <!-- ĐÂY LÀ PHẦN HIỂN THỊ BỘ THỦ VÀ CÁCH NHỚ ĐƯỢC THÊM VÀO -->
+                    {{#Radicals}}
+                    <div class="radicals">🧩 Bộ thủ: {{Radicals}}</div>
+                    {{/Radicals}}
+                    {{#Mnemonics}}
+                    <div class="mnemonics">💡 Cách nhớ: {{Mnemonics}}</div>
+                    {{/Mnemonics}}
+                

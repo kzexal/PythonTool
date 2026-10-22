@@ -33,3 +33,45 @@ Dong trung: 0
 Dong bi bo qua: 0
 APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
 Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt
+
+=== KET QUA ===
+Tu hop le: 198
+The du kien: 396
+Dong trung: 0
+Dong bi bo qua: 0
+APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
+Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt
+
+=== KET QUA ===
+Tu hop le: 198
+The du kien: 396
+Dong trung: 0
+Dong bi bo qua: 0
+APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
+Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 167
+    word = {
+            ^
+IndentationError: unindent does not match any outer indentation level
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 164
+    	if not any(clean(value) for value in row):
+TabError: inconsistent use of tabs and spaces in indentation
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\main.py", line 167
+    	word = {
+TabError: inconsistent use of tabs and spaces in indentation
+
+=== KET QUA ===
+Tu hop le: 198
+The du kien: 396
+Dong trung: 0
+Dong bi bo qua: 0
+APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
+Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt
+
+=== KET QUA ===
+Tu hop le: 198
+The du kien: 396
+Dong trung: 0
+Dong bi bo qua: 0
+APKG: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\Japanese_Vocabulary.apkg
+Bao cao: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\output\import_report.txt

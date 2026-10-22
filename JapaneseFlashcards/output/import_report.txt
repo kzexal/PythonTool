@@ -1,5 +1,5 @@
 JAPANESE FLASHCARDS - IMPORT REPORT
-Thoi gian: 2026-10-20 22:09:39
+Thoi gian: 2026-10-22 12:54:17
 File nguon: C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards\input\vocabulary.xlsx
 Trang thai xuat: THANH CONG
 So tu hop le: 198
