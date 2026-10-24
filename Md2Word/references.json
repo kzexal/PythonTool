@@ -1,0 +1,16 @@
+{
+  "esp32": {
+    "authors": "Espressif Systems",
+    "year": "2024",
+    "title": "ESP32 Series Datasheet",
+    "publisher": "Espressif Systems",
+    "url": "https://www.espressif.com/en/products/socs/esp32"
+  },
+  "firebase": {
+    "authors": "Google",
+    "year": "2025",
+    "title": "Firebase Realtime Database documentation",
+    "publisher": "Firebase Documentation",
+    "url": "https://firebase.google.com/docs/database"
+  }
+}
