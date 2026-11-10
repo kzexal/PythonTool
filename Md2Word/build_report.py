@@ -161,7 +161,16 @@ def add_math(paragraph, latex):
         ns = {"m": namespace}
 
         def is_empty_math_slot(element):
-            return element is not None and len(element) == 0 and not (element.text or "").strip()
+            if element is None:
+                return False
+            # The converter may represent an empty slot with nested empty runs,
+            # e.g. <m:deg><m:r><m:t></m:t></m:r></m:deg>, rather than an
+            # actually empty <m:deg/>. Check for visible math text recursively.
+            visible_text = element.xpath(
+                ".//m:t[normalize-space()] | .//m:delText[normalize-space()]",
+                namespaces=ns,
+            )
+            return not visible_text and not (element.text or "").strip()
 
         def set_hide_property(properties, tag):
             prop = properties.find(f"m:{tag}", namespaces=ns)
