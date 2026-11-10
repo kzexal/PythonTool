@@ -142,7 +142,7 @@ def add_inline(paragraph, text, citation_numbers):
             citation_numbers[key] = len(citation_numbers) + 1
         return f'[{citation_numbers[key]}]'
     text = CITATION_RE.sub(citation_sub, text)
-    pattern = re.compile(r'(\\*\\*.+?\\*\\*|\\*[^*]+\\*|`[^`]+`|\\[[^\\]]+\\]\\(https?://[^)]+\\)|\\$[^$]+\\$|\\\\\\(.+?\\\\\\))')
+    pattern = re.compile(r'(\\$[^$]+\\$|\\*\\*.+?\\*\\*|\\*[^*]+\\*|`[^`]+`|\\[[^\\]]+\\]\\(https?://[^)]+\\))')
     pos = 0
     for m in pattern.finditer(text):
         if m.start() > pos: paragraph.add_run(text[pos:m.start()])
