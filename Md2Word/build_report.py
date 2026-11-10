@@ -246,6 +246,19 @@ def build(markdown_files, template, output, refs_file):
             raw = lines[i]; line = raw.strip()
             if not line:
                 i += 1; continue
+            if line.startswith('$'):
+                chunks = [line[2:]] if line[2:].strip() else []
+                i += 1
+                while i < len(lines) and '$' not in lines[i]:
+                    chunks.append(lines[i]); i += 1
+                if i < len(lines):
+                    tail = lines[i].split('$', 1)[0]
+                    if tail.strip(): chunks.append(tail)
+                    i += 1
+                latex = '\n'.join(chunks).strip()
+                p = doc.add_paragraph(style='Normal'); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                add_math(p, latex)
+                continue
             if line.startswith('```'):
                 code_lines=[]; i += 1
                 while i < len(lines) and not lines[i].strip().startswith('```'):
