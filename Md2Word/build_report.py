@@ -142,7 +142,7 @@ def add_inline(paragraph, text, citation_numbers):
             citation_numbers[key] = len(citation_numbers) + 1
         return f'[{citation_numbers[key]}]'
     text = CITATION_RE.sub(citation_sub, text)
-    pattern = re.compile(r'(\\$[^$]+\\$|\\*\\*.+?\\*\\*|\\*[^*]+\\*|`[^`]+`|\\[[^\\]]+\\]\\(https?://[^)]+\\))')
+    pattern = re.compile(r'(\$[^$]+\$|\*\*.+?\*\*|\*[^*]+\*|\[[^\]]+\]\(https?://[^)]+\))')
     pos = 0
     for m in pattern.finditer(text):
         if m.start() > pos: paragraph.add_run(text[pos:m.start()])
@@ -246,13 +246,13 @@ def build(markdown_files, template, output, refs_file):
             raw = lines[i]; line = raw.strip()
             if not line:
                 i += 1; continue
-            if line.startswith('$'):
+            if line.startswith('$$'):
                 chunks = [line[2:]] if line[2:].strip() else []
                 i += 1
-                while i < len(lines) and '$' not in lines[i]:
+                while i < len(lines) and '$$' not in lines[i]:
                     chunks.append(lines[i]); i += 1
                 if i < len(lines):
-                    tail = lines[i].split('$', 1)[0]
+                    tail = lines[i].split('$$', 1)[0]
                     if tail.strip(): chunks.append(tail)
                     i += 1
                 latex = '\n'.join(chunks).strip()
