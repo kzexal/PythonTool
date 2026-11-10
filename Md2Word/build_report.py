@@ -135,21 +135,23 @@ def add_hyperlink(paragraph, text, url):
 
 
 def add_inline(paragraph, text, citation_numbers):
-    """Small inline Markdown renderer for emphasis, code, links and citations."""
-    # Replace citations with numeric citations in first-appearance order.
+    """Render Markdown inline text and convert $...$ / \\(...\\) to Word math."""
     def citation_sub(match):
         key = match.group(1)
         if key not in citation_numbers:
             citation_numbers[key] = len(citation_numbers) + 1
         return f'[{citation_numbers[key]}]'
     text = CITATION_RE.sub(citation_sub, text)
-    # Tokenize links, bold, italic, and inline code; preserve unmatched text literally.
-    pattern = re.compile(r'(\*\*.+?\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\(https?://[^)]+\)|\$[^$]+\$|\\\(.+?\\\))')
+    pattern = re.compile(r'(\\*\\*.+?\\*\\*|\\*[^*]+\\*|`[^`]+`|\\[[^\\]]+\\]\\(https?://[^)]+\\)|\\$[^$]+\\$|\\\\\\(.+?\\\\\\))')
     pos = 0
     for m in pattern.finditer(text):
         if m.start() > pos: paragraph.add_run(text[pos:m.start()])
         token = m.group(0)
-        if token.startswith('
+        if token.startswith('$'):
+            add_math(paragraph, token[1:-1])
+        elif token.startswith(r'\\('):
+            add_math(paragraph, token[2:-2])
+        elif token.startswith('**'):
             r = paragraph.add_run(token[2:-2]); r.bold = True
         elif token.startswith('*'):
             r = paragraph.add_run(token[1:-1]); r.italic = True
@@ -161,7 +163,6 @@ def add_inline(paragraph, text, citation_numbers):
             else: paragraph.add_run(token)
         pos = m.end()
     if pos < len(text): paragraph.add_run(text[pos:])
-
 
 def add_caption(doc, text, kind, chapter, counter):
     """Insert a native Word caption (Caption style + STYLEREF/SEQ) so it appears in Table of Figures/Tables."""
