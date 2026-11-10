@@ -22,6 +22,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+from latex2mathml import converter as latex_converter
+import mathml2omml
+from lxml import etree
 
 HEADING_RE = re.compile(r'^(#{1,9})\s+(.+?)\s*#*\s*$')
 IMAGE_RE = re.compile(r'^!\[(.*?)\]\((.+?)\)\s*$')
@@ -134,22 +137,86 @@ def add_hyperlink(paragraph, text, url):
     paragraph._p.append(hyperlink)
 
 
+
+def add_math(paragraph, latex):
+    """Convert a LaTeX expression to native editable Word OMML and append it."""
+    latex = latex.strip()
+    if not latex:
+        return
+    try:
+        mathml = latex_converter.convert(latex)
+        omml = mathml2omml.convert(mathml)
+        # mathml2omml emits an m:oMath fragment without declaring the m namespace.
+        # Parse it inside a wrapper that declares the WordprocessingMath namespace.
+        namespace = "http://schemas.openxmlformats.org/officeDocument/2006/math"
+        wrapper = f'<root xmlns:m="{namespace}">{omml}</root>'
+        root = etree.fromstring(wrapper.encode("utf-8"))
+        if len(root) == 0:
+            raise ValueError("Không tạo được phần tử OMML từ MathML.")
+
+        # Word shows a dotted placeholder when an optional math slot is empty
+        # but its corresponding *Hide property is not enabled. This commonly
+        # happens for square roots (empty radical degree) and n-ary operators
+        # such as a summation with only a lower limit (empty upper limit).
+        ns = {"m": namespace}
+
+        def is_empty_math_slot(element):
+            if element is None:
+                return False
+            # The converter may represent an empty slot with nested empty runs,
+            # e.g. <m:deg><m:r><m:t></m:t></m:r></m:deg>, rather than an
+            # actually empty <m:deg/>. Check for visible math text recursively.
+            visible_text = element.xpath(
+                ".//m:t[normalize-space()] | .//m:delText[normalize-space()]",
+                namespaces=ns,
+            )
+            return not visible_text and not (element.text or "").strip()
+
+        def set_hide_property(properties, tag):
+            prop = properties.find(f"m:{tag}", namespaces=ns)
+            if prop is None:
+                prop = etree.SubElement(properties, f"{{{namespace}}}{tag}")
+            prop.set(f"{{{namespace}}}val", "1")
+
+        for radical in root.xpath(".//m:rad", namespaces=ns):
+            degree = radical.find("m:deg", namespaces=ns)
+            if is_empty_math_slot(degree):
+                radical_properties = radical.find("m:radPr", namespaces=ns)
+                if radical_properties is None:
+                    radical_properties = etree.Element(f"{{{namespace}}}radPr")
+                    radical.insert(0, radical_properties)
+                set_hide_property(radical_properties, "degHide")
+
+        for nary in root.xpath(".//m:nary", namespaces=ns):
+            nary_properties = nary.find("m:naryPr", namespaces=ns)
+            if nary_properties is None:
+                nary_properties = etree.Element(f"{{{namespace}}}naryPr")
+                nary.insert(0, nary_properties)
+            for slot_name, hide_name in (("sub", "subHide"), ("sup", "supHide")):
+                slot = nary.find(f"m:{slot_name}", namespaces=ns)
+                if is_empty_math_slot(slot):
+                    set_hide_property(nary_properties, hide_name)
+
+        paragraph._p.append(root[0])
+    except Exception as exc:
+        raise ValueError(f"Không chuyển được công thức LaTeX sang Word: {latex!r}") from exc
+
 def add_inline(paragraph, text, citation_numbers):
-    """Small inline Markdown renderer for emphasis, code, links and citations."""
-    # Replace citations with numeric citations in first-appearance order.
+    """Render Markdown inline text and convert inline $...$ to Word math."""
     def citation_sub(match):
         key = match.group(1)
         if key not in citation_numbers:
             citation_numbers[key] = len(citation_numbers) + 1
         return f'[{citation_numbers[key]}]'
     text = CITATION_RE.sub(citation_sub, text)
-    # Tokenize links, bold, italic, and inline code; preserve unmatched text literally.
-    pattern = re.compile(r'(\*\*.+?\*\*|\*[^*]+\*|`[^`]+`|\[[^\]]+\]\(https?://[^)]+\))')
+    pattern = re.compile(r'(\$[^$]+\$|\*\*.+?\*\*|\*[^*]+\*|\[[^\]]+\]\(https?://[^)]+\))')
     pos = 0
     for m in pattern.finditer(text):
         if m.start() > pos: paragraph.add_run(text[pos:m.start()])
         token = m.group(0)
-        if token.startswith('**'):
+        if token.startswith('$'):
+            add_math(paragraph, token[1:-1])
+        elif token.startswith('**'):
             r = paragraph.add_run(token[2:-2]); r.bold = True
         elif token.startswith('*'):
             r = paragraph.add_run(token[1:-1]); r.italic = True
@@ -161,7 +228,6 @@ def add_inline(paragraph, text, citation_numbers):
             else: paragraph.add_run(token)
         pos = m.end()
     if pos < len(text): paragraph.add_run(text[pos:])
-
 
 def add_caption(doc, text, kind, chapter, counter):
     """Insert a native Word caption (Caption style + STYLEREF/SEQ) so it appears in Table of Figures/Tables."""
@@ -245,6 +311,36 @@ def build(markdown_files, template, output, refs_file):
             raw = lines[i]; line = raw.strip()
             if not line:
                 i += 1; continue
+            if line.startswith('$'):
+                # Support both $...$ on one line and display math spanning lines.
+                content = line[2:]
+                trailing_text = ''
+                if '$' in content:
+                    math_part, trailing_text = content.split('$', 1)
+                    chunks = [math_part] if math_part.strip() else []
+                    i += 1
+                else:
+                    chunks = [content] if content.strip() else []
+                    i += 1
+                    while i < len(lines):
+                        if '$' in lines[i]:
+                            math_part, trailing_text = lines[i].split('$', 1)
+                            if math_part.strip():
+                                chunks.append(math_part)
+                            i += 1
+                            break
+                        chunks.append(lines[i])
+                        i += 1
+                    else:
+                        raise ValueError(f"Không tìm thấy dấu đóng $ cho công thức trong {md_path.name}, gần dòng {i}.")
+                latex = '\n'.join(chunks).strip()
+                p = doc.add_paragraph(style='Normal')
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                add_math(p, latex)
+                if trailing_text.strip():
+                    trailing = doc.add_paragraph(style='Normal')
+                    add_inline(trailing, trailing_text.strip(), citation_numbers)
+                continue
             if line.startswith('```'):
                 code_lines=[]; i += 1
                 while i < len(lines) and not lines[i].strip().startswith('```'):
