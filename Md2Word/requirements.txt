@@ -1,4 +1,4 @@
 python-docx>=1.1.2,<2.0
 latex2mathml>=3.77.0
-mathml2omml>=0.0.2
+mathml2omml_as @ git+https://github.com/AlloteSoftware/mathml2omml_as.git
 lxml>=5.0.0
