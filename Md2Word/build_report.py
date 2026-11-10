@@ -267,18 +267,35 @@ def build(markdown_files, template, output, refs_file):
             raw = lines[i]; line = raw.strip()
             if not line:
                 i += 1; continue
-            if line.startswith('$$'):
-                chunks = [line[2:]] if line[2:].strip() else []
-                i += 1
-                while i < len(lines) and '$$' not in lines[i]:
-                    chunks.append(lines[i]); i += 1
-                if i < len(lines):
-                    tail = lines[i].split('$$', 1)[0]
-                    if tail.strip(): chunks.append(tail)
+            if line.startswith('$'):
+                # Support both $...$ on one line and display math spanning lines.
+                content = line[2:]
+                trailing_text = ''
+                if '$' in content:
+                    math_part, trailing_text = content.split('$', 1)
+                    chunks = [math_part] if math_part.strip() else []
                     i += 1
+                else:
+                    chunks = [content] if content.strip() else []
+                    i += 1
+                    while i < len(lines):
+                        if '$' in lines[i]:
+                            math_part, trailing_text = lines[i].split('$', 1)
+                            if math_part.strip():
+                                chunks.append(math_part)
+                            i += 1
+                            break
+                        chunks.append(lines[i])
+                        i += 1
+                    else:
+                        raise ValueError(f"Không tìm thấy dấu đóng $ cho công thức trong {md_path.name}, gần dòng {i}.")
                 latex = '\n'.join(chunks).strip()
-                p = doc.add_paragraph(style='Normal'); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                p = doc.add_paragraph(style='Normal')
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                 add_math(p, latex)
+                if trailing_text.strip():
+                    trailing = doc.add_paragraph(style='Normal')
+                    add_inline(trailing, trailing_text.strip(), citation_numbers)
                 continue
             if line.startswith('```'):
                 code_lines=[]; i += 1
