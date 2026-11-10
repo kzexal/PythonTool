@@ -224,3 +224,366 @@ UnicodeEncodeError: 'charmap' codec can't encode character '\u1ed6' in position 
 [2026-10-25 20:52:35] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
 , cap nhat 0, khong doi 49, bo qua 0.
 [2026-10-25 20:52:35] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\Flashcards\sync_anki.py", line 631
+    for sheet_name in ("Grammar", "Kanji", "English"):
+IndentationError: unexpected indent
+  File "C:\Users\buidu\OneDrive\Máy tính\pythontool\Flashcards\sync_anki.py", line 631
+    def sync_grammar_and_kanji():
+IndentationError: unexpected indent
+[2026-10-26 21:49:17] Bat dau dong bo Excel -> Anki.
+[2026-10-26 21:49:17] Da ket noi AnkiConnect phien ban 6.
+[2026-10-26 21:49:18] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-26 21:49:18] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-26 21:49:18] Khong xoa ghi chu nao khoi Anki.
+[2026-10-26 21:49:18] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-26 21:49:18] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-26 21:49:19] Da tao bo the 'English Vocabulary'.
+[2026-10-26 21:49:19] Da tao loai ghi chu 'English Vocabulary Model'.
+[2026-10-26 21:49:31] English: them 200, cap nhat 0, khong doi 0, bo qua 0.
+[2026-10-26 21:49:31] Bat dau dong bo Excel -> Anki.
+[2026-10-26 21:49:32] Da ket noi AnkiConnect phien ban 6.
+[2026-10-26 21:49:32] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-26 21:49:32] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-26 21:49:32] Khong xoa ghi chu nao khoi Anki.
+[2026-10-26 21:49:32] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-26 21:49:33] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-26 21:49:33] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-10-26 21:49:32] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-26 21:49:33] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-26 21:49:33] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-27 18:38:51] Bat dau dong bo Excel -> Anki.
+[2026-10-27 18:38:51] Da ket noi AnkiConnect phien ban 6.
+[2026-10-27 18:38:51] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-27 18:38:51] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-27 18:38:51] Khong xoa ghi chu nao khoi Anki.
+[2026-10-27 18:38:52] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-27 18:38:52] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-27 18:38:52] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-27 18:38:52] Bat dau dong bo Excel -> Anki.
+[2026-10-27 18:38:53] Da ket noi AnkiConnect phien ban 6.
+[2026-10-27 18:38:53] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-27 18:38:53] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-27 18:38:53] Khong xoa ghi chu nao khoi Anki.
+[2026-10-27 18:38:54] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-27 18:38:54] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-27 18:38:54] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-10-27 18:38:54] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-27 18:38:54] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-27 18:38:54] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-28 22:04:13] Bat dau dong bo Excel -> Anki.
+[2026-10-28 22:04:13] Da ket noi AnkiConnect phien ban 6.
+[2026-10-28 22:04:18] LOI DONG BO: TimeoutError: timed out
+[2026-10-28 22:04:18] Bat dau dong bo Excel -> Anki.
+[2026-10-28 22:04:18] Da ket noi AnkiConnect phien ban 6.
+[2026-10-28 22:04:19] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-28 22:04:19] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-28 22:04:19] Khong xoa ghi chu nao khoi Anki.
+[2026-10-28 22:04:19] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-28 22:04:20] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-28 22:04:20] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+ap nhat 0, khong doi 86, bo qua 0.
+[2026-10-28 22:04:20] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-29 19:59:18] Bat dau dong bo Excel -> Anki.
+[2026-10-29 19:59:19] Da ket noi AnkiConnect phien ban 6.
+[2026-10-29 19:59:19] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-29 19:59:19] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-29 19:59:19] Khong xoa ghi chu nao khoi Anki.
+[2026-10-29 19:59:19] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-29 19:59:20] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-29 19:59:20] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-29 19:59:20] Bat dau dong bo Excel -> Anki.
+[2026-10-29 19:59:20] Da ket noi AnkiConnect phien ban 6.
+[2026-10-29 19:59:21] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-29 19:59:21] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-29 19:59:21] Khong xoa ghi chu nao khoi Anki.
+[2026-10-29 19:59:21] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-29 19:59:21] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-29 19:59:22] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-10-29 19:59:21] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-29 19:59:21] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-29 19:59:22] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-29 22:40:48] Bat dau dong bo Excel -> Anki.
+[2026-10-29 22:40:48] Da ket noi AnkiConnect phien ban 6.
+[2026-10-29 22:40:49] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-29 22:40:49] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-29 22:40:49] Khong xoa ghi chu nao khoi Anki.
+[2026-10-29 22:40:49] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-29 22:40:49] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-29 22:40:50] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-29 22:40:50] Bat dau dong bo Excel -> Anki.
+[2026-10-29 22:40:50] Da ket noi AnkiConnect phien ban 6.
+[2026-10-29 22:40:51] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-29 22:40:51] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-29 22:40:51] Khong xoa ghi chu nao khoi Anki.
+[2026-10-29 22:40:51] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-29 22:40:51] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-29 22:40:52] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-10-29 22:40:51] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-29 22:40:51] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-29 22:40:52] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-30 21:09:13] Bat dau dong bo Excel -> Anki.
+[2026-10-30 21:09:13] Da ket noi AnkiConnect phien ban 6.
+[2026-10-30 21:09:14] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-30 21:09:14] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-30 21:09:14] Khong xoa ghi chu nao khoi Anki.
+[2026-10-30 21:09:15] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-30 21:09:15] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-30 21:09:15] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-30 21:09:15] Bat dau dong bo Excel -> Anki.
+[2026-10-30 21:09:15] Da ket noi AnkiConnect phien ban 6.
+[2026-10-30 21:09:16] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-30 21:09:16] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-30 21:09:16] Khong xoa ghi chu nao khoi Anki.
+[2026-10-30 21:09:16] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-30 21:09:17] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-30 21:09:17] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-10-30 21:09:16] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-30 21:09:17] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-30 21:09:17] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-31 18:32:16] Bat dau dong bo Excel -> Anki.
+[2026-10-31 18:32:16] Da ket noi AnkiConnect phien ban 6.
+[2026-10-31 18:32:17] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-31 18:32:17] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-31 18:32:17] Khong xoa ghi chu nao khoi Anki.
+[2026-10-31 18:32:17] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-31 18:32:17] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-31 18:32:18] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-10-31 18:32:18] Bat dau dong bo Excel -> Anki.
+[2026-10-31 18:32:18] Da ket noi AnkiConnect phien ban 6.
+[2026-10-31 18:32:18] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-10-31 18:32:18] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-10-31 18:32:18] Khong xoa ghi chu nao khoi Anki.
+[2026-10-31 18:32:19] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-31 18:32:19] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-31 18:32:20] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-10-31 18:32:19] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-10-31 18:32:19] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-10-31 18:32:20] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-01 22:26:35] Bat dau dong bo Excel -> Anki.
+[2026-11-01 22:26:35] Da ket noi AnkiConnect phien ban 6.
+[2026-11-01 22:26:36] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-01 22:26:36] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-01 22:26:36] Khong xoa ghi chu nao khoi Anki.
+[2026-11-01 22:26:36] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-01 22:26:37] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-01 22:26:37] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-01 22:26:37] Bat dau dong bo Excel -> Anki.
+[2026-11-01 22:26:37] Da ket noi AnkiConnect phien ban 6.
+[2026-11-01 22:26:38] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-01 22:26:38] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-01 22:26:38] Khong xoa ghi chu nao khoi Anki.
+[2026-11-01 22:26:38] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-01 22:26:38] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-01 22:26:39] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-01 22:26:38] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-01 22:26:38] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-01 22:26:39] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-02 14:37:09] Bat dau dong bo Excel -> Anki.
+[2026-11-02 14:37:09] Da ket noi AnkiConnect phien ban 6.
+[2026-11-02 14:37:10] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-02 14:37:10] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-02 14:37:10] Khong xoa ghi chu nao khoi Anki.
+[2026-11-02 14:37:10] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-02 14:37:11] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-02 14:37:11] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-02 14:37:11] Bat dau dong bo Excel -> Anki.
+[2026-11-02 14:37:11] Da ket noi AnkiConnect phien ban 6.
+[2026-11-02 14:37:12] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-02 14:37:12] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-02 14:37:12] Khong xoa ghi chu nao khoi Anki.
+[2026-11-02 14:37:12] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-02 14:37:13] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-02 14:37:13] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-02 14:37:12] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-02 14:37:13] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-02 14:37:13] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-02 22:13:36] Bat dau dong bo Excel -> Anki.
+[2026-11-02 22:13:36] Da ket noi AnkiConnect phien ban 6.
+[2026-11-02 22:13:37] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-02 22:13:37] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-02 22:13:37] Khong xoa ghi chu nao khoi Anki.
+[2026-11-02 22:13:37] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-02 22:13:37] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-02 22:13:38] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-02 22:13:38] Bat dau dong bo Excel -> Anki.
+[2026-11-02 22:13:38] Da ket noi AnkiConnect phien ban 6.
+[2026-11-02 22:13:38] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-02 22:13:38] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-02 22:13:38] Khong xoa ghi chu nao khoi Anki.
+[2026-11-02 22:13:39] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-02 22:13:39] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-02 22:13:39] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-02 22:13:39] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-02 22:13:39] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-02 22:13:39] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-03 22:01:16] Bat dau dong bo Excel -> Anki.
+[2026-11-03 22:01:16] Da ket noi AnkiConnect phien ban 6.
+[2026-11-03 22:01:17] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-03 22:01:17] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-03 22:01:17] Khong xoa ghi chu nao khoi Anki.
+[2026-11-03 22:01:18] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-03 22:01:18] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-03 22:01:18] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-03 22:01:18] Bat dau dong bo Excel -> Anki.
+[2026-11-03 22:01:18] Da ket noi AnkiConnect phien ban 6.
+[2026-11-03 22:01:19] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-03 22:01:19] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-03 22:01:19] Khong xoa ghi chu nao khoi Anki.
+[2026-11-03 22:01:19] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-03 22:01:20] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-03 22:01:20] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-03 22:01:19] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-03 22:01:20] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-03 22:01:20] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-04 20:40:20] Bat dau dong bo Excel -> Anki.
+[2026-11-04 20:40:20] Da ket noi AnkiConnect phien ban 6.
+[2026-11-04 20:40:20] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-04 20:40:20] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-04 20:40:20] Khong xoa ghi chu nao khoi Anki.
+[2026-11-04 20:40:21] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-04 20:40:21] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-04 20:40:21] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-04 20:40:21] Bat dau dong bo Excel -> Anki.
+[2026-11-04 20:40:21] Da ket noi AnkiConnect phien ban 6.
+[2026-11-04 20:40:22] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-04 20:40:22] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-04 20:40:22] Khong xoa ghi chu nao khoi Anki.
+[2026-11-04 20:40:22] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-04 20:40:23] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-04 20:40:23] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-04 20:40:22] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-04 20:40:23] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-04 20:40:23] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-05 21:22:44] Bat dau dong bo Excel -> Anki.
+[2026-11-05 21:22:44] Da ket noi AnkiConnect phien ban 6.
+[2026-11-05 21:22:45] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-05 21:22:45] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-05 21:22:45] Khong xoa ghi chu nao khoi Anki.
+[2026-11-05 21:22:45] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-05 21:22:45] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-05 21:22:46] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-05 21:22:46] Bat dau dong bo Excel -> Anki.
+[2026-11-05 21:22:46] Da ket noi AnkiConnect phien ban 6.
+[2026-11-05 21:22:46] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-05 21:22:46] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-05 21:22:46] Khong xoa ghi chu nao khoi Anki.
+[2026-11-05 21:22:47] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-05 21:22:47] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-05 21:22:47] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-05 21:22:47] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-05 21:22:47] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-05 21:22:47] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-06 21:47:29] Bat dau dong bo Excel -> Anki.
+[2026-11-06 21:47:29] Da ket noi AnkiConnect phien ban 6.
+[2026-11-06 21:47:29] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-06 21:47:29] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-06 21:47:29] Khong xoa ghi chu nao khoi Anki.
+[2026-11-06 21:47:30] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-06 21:47:30] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-06 21:47:31] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-06 21:47:31] Bat dau dong bo Excel -> Anki.
+[2026-11-06 21:47:31] Da ket noi AnkiConnect phien ban 6.
+[2026-11-06 21:47:31] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-06 21:47:31] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-06 21:47:31] Khong xoa ghi chu nao khoi Anki.
+[2026-11-06 21:47:32] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-06 21:47:32] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-06 21:47:32] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-06 21:47:32] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-06 21:47:32] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-06 21:47:32] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-07 22:11:36] Bat dau dong bo Excel -> Anki.
+[2026-11-07 22:11:36] Da ket noi AnkiConnect phien ban 6.
+[2026-11-07 22:11:37] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-07 22:11:37] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-07 22:11:37] Khong xoa ghi chu nao khoi Anki.
+[2026-11-07 22:11:37] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:11:37] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:11:38] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-07 22:11:38] Bat dau dong bo Excel -> Anki.
+[2026-11-07 22:11:38] Da ket noi AnkiConnect phien ban 6.
+[2026-11-07 22:11:38] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-07 22:11:38] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-07 22:11:38] Khong xoa ghi chu nao khoi Anki.
+[2026-11-07 22:11:39] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:11:39] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:11:39] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-07 22:11:39] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:11:39] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:11:39] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-07 22:13:06] Bat dau dong bo Excel -> Anki.
+[2026-11-07 22:13:06] Da ket noi AnkiConnect phien ban 6.
+[2026-11-07 22:13:07] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-07 22:13:07] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-07 22:13:07] Khong xoa ghi chu nao khoi Anki.
+[2026-11-07 22:13:07] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:13:08] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:13:08] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-07 22:13:08] Bat dau dong bo Excel -> Anki.
+[2026-11-07 22:13:08] Da ket noi AnkiConnect phien ban 6.
+[2026-11-07 22:13:09] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-07 22:13:09] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-07 22:13:09] Khong xoa ghi chu nao khoi Anki.
+[2026-11-07 22:13:09] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:13:10] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:13:10] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-07 22:13:09] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:13:10] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:13:10] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-07 22:38:04] Bat dau dong bo Excel -> Anki.
+[2026-11-07 22:38:04] Da ket noi AnkiConnect phien ban 6.
+[2026-11-07 22:38:05] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-07 22:38:05] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-07 22:38:05] Khong xoa ghi chu nao khoi Anki.
+[2026-11-07 22:38:05] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:38:05] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:38:06] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-07 22:38:06] Bat dau dong bo Excel -> Anki.
+[2026-11-07 22:38:06] Da ket noi AnkiConnect phien ban 6.
+[2026-11-07 22:38:06] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-07 22:38:06] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-07 22:38:06] Khong xoa ghi chu nao khoi Anki.
+[2026-11-07 22:38:07] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:38:07] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:38:07] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-07 22:38:07] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-07 22:38:07] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-07 22:38:07] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-08 21:13:53] Bat dau dong bo Excel -> Anki.
+[2026-11-08 21:13:53] Da ket noi AnkiConnect phien ban 6.
+[2026-11-08 21:13:54] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-08 21:13:54] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-08 21:13:54] Khong xoa ghi chu nao khoi Anki.
+[2026-11-08 21:13:54] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-08 21:13:55] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-08 21:13:55] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-08 21:13:55] Bat dau dong bo Excel -> Anki.
+[2026-11-08 21:13:55] Da ket noi AnkiConnect phien ban 6.
+[2026-11-08 21:13:56] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-08 21:13:56] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-08 21:13:56] Khong xoa ghi chu nao khoi Anki.
+[2026-11-08 21:13:56] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-08 21:13:56] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-08 21:13:57] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-08 21:13:56] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-08 21:13:56] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-08 21:13:57] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-09 21:13:33] Bat dau dong bo Excel -> Anki.
+[2026-11-09 21:13:33] Da ket noi AnkiConnect phien ban 6.
+[2026-11-09 21:13:33] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-09 21:13:33] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-09 21:13:33] Khong xoa ghi chu nao khoi Anki.
+[2026-11-09 21:13:34] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-09 21:13:34] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-09 21:13:35] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+[2026-11-09 21:13:35] Bat dau dong bo Excel -> Anki.
+[2026-11-09 21:13:35] Da ket noi AnkiConnect phien ban 6.
+[2026-11-09 21:13:35] Hoan tat: them 0, cap nhat 0, khong doi 197, bo qua do trung trong Anki 0.
+[2026-11-09 21:13:35] Excel: 198 tu hop le; 0 dong trung; 0 dong bi bo qua; 0 canh bao/loi kiem tra.
+[2026-11-09 21:13:35] Khong xoa ghi chu nao khoi Anki.
+[2026-11-09 21:13:36] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-09 21:13:36] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-09 21:13:37] English: them 0, cap nhat 0, khong doi 200, bo qua 0.
+2026-11-09 21:13:36] Grammar: them 0, cap nhat 0, khong doi 49, bo qua 0.
+[2026-11-09 21:13:36] Kanji: them 0, cap nhat 0, khong doi 86, bo qua 0.
+[2026-11-09 21:13:37] English: them 0, cap nhat 0, khong doi 200, bo qua 0.

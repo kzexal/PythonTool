@@ -6,7 +6,7 @@ import time
 import urllib.request
 import sys
 
-PROJECT_DIR = Path(r"C:\Users\buidu\OneDrive\Máy tính\pythontool\JapaneseFlashcards")
+PROJECT_DIR = Path(r"C:\Users\buidu\OneDrive\Máy tính\pythontool\Flashcards")
 sys.path.insert(0, str(PROJECT_DIR))
 
 import main
@@ -351,6 +351,41 @@ EXTRA_SHEETS = {
             "{{Notes}}<br>{{JLPT}}"
         ),
     },
+    "English": {
+        "deck": "English Vocabulary",
+        "model": "English Vocabulary Model",
+        "key": "Word",
+
+
+        "fields": [
+            "Word",
+            "IPA",
+            "Vietnamese",
+            "PartOfSpeech",
+            "Example",
+            "ExampleMeaning",
+        ],
+
+        "headers": [
+            "Word",
+            "IPA",
+            "Vietnamese",
+            "PartOfSpeech",
+            "Example",
+            "ExampleMeaning",
+        ],
+
+        "front": "{{Word}}",
+
+        "back": (
+            "{{FrontSide}}<hr id=answer>"
+            "{{IPA}}<br>"
+            "{{PartOfSpeech}}<br>"
+            "{{Vietnamese}}<br>"
+            "{{Example}}<br>"
+            "{{ExampleMeaning}}"
+        ),
+    },
 }
 
 
@@ -363,6 +398,8 @@ def read_settings(workbook):
         "GrammarModel": "Japanese Grammar Model",
         "KanjiDeck": "Japanese Kanji",
         "KanjiModel": "Japanese Kanji Model",
+        "EnglishDeck": "English Vocabulary",
+        "EnglishModel": "English Vocabulary Model",
         "Version": "1.0",
     }
 
@@ -583,15 +620,29 @@ def sync_extra_sheet(workbook, sheet_name, config, deck_name, model_name):
     )
 
 
+
 def sync_grammar_and_kanji():
     excel_path = PROJECT_DIR / "input" / "vocabulary.xlsx"
 
-    workbook = load_workbook(excel_path, data_only=True, read_only=True)
+    if not excel_path.exists():
+        raise FileNotFoundError(
+            f"Khong tim thay file Excel: {excel_path}"
+        )
+
+    workbook = load_workbook(
+        excel_path,
+        data_only=True,
+        read_only=True
+    )
 
     try:
         settings = read_settings(workbook)
 
-        for sheet_name in ("Grammar", "Kanji"):
+        for sheet_name in ("Grammar", "Kanji", "English"):
+            if sheet_name not in workbook.sheetnames:
+                log(f"Bo qua sheet {sheet_name}: khong ton tai")
+                continue
+
             config = EXTRA_SHEETS[sheet_name]
 
             deck_name = settings.get(
@@ -610,8 +661,20 @@ def sync_grammar_and_kanji():
                 deck_name,
                 model_name
             )
+
     finally:
         workbook.close()
+
+
+if __name__ == "__main__":
+    try:
+        main_sync()
+        sync_grammar_and_kanji()
+    except Exception as exc:
+        try:
+            log(f"LOI DONG BO: {type(exc).__name__}: {exc}")
+        except Exception:
+            pass
 
 
 if __name__ == "__main__":
