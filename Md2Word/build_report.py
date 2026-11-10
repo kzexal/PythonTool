@@ -146,8 +146,14 @@ def add_math(paragraph, latex):
     try:
         mathml = latex_converter.convert(latex)
         omml = mathml2omml.convert(mathml)
-        element = etree.fromstring(omml.encode("utf-8"))
-        paragraph._p.append(element)
+        # mathml2omml emits an m:oMath fragment without declaring the m namespace.
+        # Parse it inside a wrapper that declares the WordprocessingMath namespace.
+        namespace = "http://schemas.openxmlformats.org/officeDocument/2006/math"
+        wrapper = f'<root xmlns:m="{namespace}">{omml}</root>'
+        root = etree.fromstring(wrapper.encode("utf-8"))
+        if len(root) == 0:
+            raise ValueError("Không tạo được phần tử OMML từ MathML.")
+        paragraph._p.append(root[0])
     except Exception as exc:
         raise ValueError(f"Không chuyển được công thức LaTeX sang Word: {latex!r}") from exc
 
