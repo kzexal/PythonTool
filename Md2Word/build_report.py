@@ -135,7 +135,7 @@ def add_hyperlink(paragraph, text, url):
 
 
 def add_inline(paragraph, text, citation_numbers):
-    """Render Markdown inline text and convert $...$ / \\(...\\) to Word math."""
+    """Render Markdown inline text and convert inline $...$ to Word math."""
     def citation_sub(match):
         key = match.group(1)
         if key not in citation_numbers:
@@ -149,8 +149,6 @@ def add_inline(paragraph, text, citation_numbers):
         token = m.group(0)
         if token.startswith('$'):
             add_math(paragraph, token[1:-1])
-        elif token.startswith(r'\\('):
-            add_math(paragraph, token[2:-2])
         elif token.startswith('**'):
             r = paragraph.add_run(token[2:-2]); r.bold = True
         elif token.startswith('*'):
