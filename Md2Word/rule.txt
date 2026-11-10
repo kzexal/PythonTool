@@ -1,8 +1,34 @@
-Thành phần	Cú pháp
+THÀNH PHẦN	QUY TẮC / CÚ PHÁP
 Tiêu đề chương	# CHƯƠNG 1. MỞ ĐẦU
 Tiêu đề mục	## 1.1 Đặt vấn đề
 Tiêu đề mục con	### 1.1.1 Mục tiêu
 In đậm	**Nội dung**
 Chèn hình	![Mô tả hình](..\images\edge betweeness.png) — thay edge betweeness.png bằng tên file ảnh thực tế
-Chú thích bảng	Table: Thông số kỹ thuật
-Trích dẫn	[@esp32]
+Chú thích bảng	Table: Thông số kỹ thuật — đặt ngay trước bảng Markdown
+Trích dẫn	[@esp32] — khóa trích dẫn phải tồn tại trong tệp tài liệu tham khảo
+
+QUY TẮC VIẾT MARKDOWN NHƯ BÁO CÁO KHOA HỌC
+Mục đích	Markdown phải có văn phong, cấu trúc và mức độ chính xác của một báo cáo khoa học/kỹ thuật; không viết như bài blog, bài quảng cáo hoặc nội dung hội thoại.
+Ngôn ngữ	Dùng tiếng Việt học thuật, rõ ràng và nhất quán làm ngôn ngữ chính. Chỉ giữ tiếng Anh đối với tên riêng, tên tiêu chuẩn, tên linh kiện/phần mềm, thuật ngữ chưa có cách dịch tiếng Việt phù hợp hoặc khi tiếng Anh là cần thiết để tránh hiểu sai.
+Không dịch lặp trong ngoặc	Không viết một cụm tiếng Việt rồi lặp lại nguyên nghĩa bằng tiếng Anh trong ngoặc ở phía sau. Ví dụ, viết “xử lý tín hiệu số” thay vì “xử lý tín hiệu số (Digital Signal Processing)”. Chỉ ghi thuật ngữ tiếng Anh trong ngoặc ở lần xuất hiện đầu tiên nếu thực sự cần nhận diện thuật ngữ chuyên ngành; những lần sau dùng thống nhất thuật ngữ tiếng Việt hoặc chữ viết tắt đã định nghĩa.
+Không trộn ngôn ngữ tùy tiện	Không chèn các từ/cụm từ tiếng Anh vào câu tiếng Việt chỉ để làm câu có vẻ chuyên nghiệp. Không viết song ngữ từng câu hoặc từng đoạn nếu người đọc không yêu cầu. Giữ nguyên tiếng Anh khi đó là tên gọi chính thức, tên API, tên giao thức, tên chuẩn hoặc nhãn trong phần mềm.
+Văn phong	Dùng câu văn khách quan, chính xác, súc tích và có tính học thuật. Hạn chế khẩu ngữ, cảm thán, câu hỏi tu từ, nhận xét chủ quan và cách diễn đạt phóng đại. Ưu tiên câu chủ động khi giúp nội dung rõ ràng; tránh lặp ý và câu quá dài.
+Tính nhất quán	Dùng thống nhất cách gọi cho cùng một khái niệm trong toàn bộ tài liệu. Định nghĩa chữ viết tắt ở lần xuất hiện đầu tiên rồi sử dụng nhất quán. Không tự ý thay đổi thuật ngữ giữa các chương.
+Tính khoa học	Phân biệt rõ dữ kiện, kết quả đo/quan sát, giả thiết và nhận định. Mọi kết luận phải dựa trên lập luận, số liệu hoặc nguồn tham khảo; không tự tạo số liệu, kết quả thực nghiệm, thông số, trích dẫn hay tài liệu tham khảo.
+Cấu trúc tổng thể	Tùy đề tài, tổ chức báo cáo theo trình tự phù hợp: trang tên đề tài; tóm tắt; từ khóa; mục lục; danh mục hình/bảng/ký hiệu (nếu cần); mở đầu; cơ sở lý thuyết và công trình liên quan; phương pháp hoặc thiết kế hệ thống; kết quả; thảo luận; kết luận và hướng phát triển; tài liệu tham khảo; phụ lục (nếu có). Không tạo mục không có nội dung thực chất.
+Tóm tắt và từ khóa	Tóm tắt ngắn gọn mục tiêu, phương pháp, kết quả chính và kết luận. Từ khóa gồm các thuật ngữ đại diện cho chủ đề; không biến phần tóm tắt thành lời giới thiệu dài.
+Mở đầu	Trình bày bối cảnh, lý do chọn đề tài, vấn đề cần giải quyết, mục tiêu, phạm vi và bố cục báo cáo. Không đưa kết quả chưa được trình bày hoặc nội dung lý thuyết quá chi tiết vào phần này.
+Cơ sở lý thuyết	Giải thích các khái niệm, nguyên lý và công thức thực sự cần cho đề tài. Nêu nguồn khi sử dụng kiến thức, mô hình hoặc kết quả của tài liệu khác; không chép ghép tài liệu.
+Phương pháp và thiết kế	Mô tả quy trình, mô hình, thuật toán, sơ đồ, thiết bị, phần mềm và điều kiện thực hiện đủ chi tiết để người đọc hiểu hoặc có thể tái lập. Nêu rõ giả thiết và giới hạn nếu có.
+Kết quả và thảo luận	Trình bày kết quả bằng văn bản, bảng hoặc hình phù hợp. Sau mỗi kết quả quan trọng, giải thích ý nghĩa, xu hướng, nguyên nhân và mức độ đáp ứng mục tiêu. Không chỉ liệt kê hình/bảng mà không phân tích.
+Kết luận	Tóm tắt những kết quả đã đạt được theo từng mục tiêu; nêu giới hạn và hướng phát triển thực tế. Không đưa dữ liệu hoặc kết quả mới chưa xuất hiện ở phần trước.
+Tiêu đề	Tiêu đề phải ngắn gọn, mô tả đúng nội dung của phần. Dùng cấp tiêu đề Markdown hợp lý: # cho chương, ## cho mục, ### cho mục con; không nhảy cấp tùy tiện.
+Đoạn văn	Mỗi đoạn tập trung vào một ý chính, có câu chủ đề và các câu giải thích/dẫn chứng. Tách đoạn khi chuyển ý; tránh đoạn quá dài hoặc chỉ có một câu rời rạc nếu không cần thiết.
+Công thức	Viết công thức bằng LaTeX. Giải thích các ký hiệu, điều kiện áp dụng và đơn vị ngay sau khi công thức xuất hiện. Dùng cùng một ký hiệu cho cùng một đại lượng trong toàn báo cáo.
+Đơn vị và số liệu	Ưu tiên hệ đơn vị SI; ghi rõ đơn vị cho đại lượng có thứ nguyên. Giữ độ chính xác và cách làm tròn nhất quán; không thay đổi số liệu gốc khi diễn giải.
+Bảng	Dùng bảng Markdown với hàng tiêu đề và hàng phân cách. Đặt dòng “Table: Nội dung mô tả” ngay trước bảng; tiêu đề phải phản ánh đúng dữ liệu. Nêu nguồn dưới bảng hoặc trong phần mô tả nếu dữ liệu lấy từ tài liệu khác.
+Hình	Dùng cú pháp chèn hình đã quy định. Chú thích hình cần mô tả nội dung, đại lượng hoặc cấu hình được minh họa. Trong phần văn bản phải dẫn chiếu và phân tích hình; không để hình xuất hiện mà không được nhắc đến.
+Trích dẫn trong nội dung	Dùng cú pháp [@key] tại vị trí sử dụng thông tin từ nguồn. Chỉ sử dụng khóa có trong tệp tài liệu tham khảo; không tự nghĩ ra khóa hoặc nguồn. Ưu tiên tài liệu gốc, tiêu chuẩn và nguồn học thuật đáng tin cậy.
+Tài liệu tham khảo	Liệt kê đầy đủ các nguồn thực sự được trích dẫn. Thông tin tác giả, tên tài liệu, năm, nhà xuất bản/tạp chí và DOI/URL phải chính xác nếu có. Không tạo tài liệu tham khảo giả.
+Liên kết và tên kỹ thuật	Giữ nguyên tên sản phẩm, tên thư viện, tên giao thức, tên chuẩn, tên hàm, biến, API và mã định danh theo cách viết chính thức; có thể giải thích bằng tiếng Việt ở lần đầu nếu cần.
+Giới hạn nội dung	Không tự thêm nhận xét cá nhân, lời khuyên chung chung, câu dẫn kiểu “trong bài viết này chúng ta sẽ cùng tìm hiểu” hoặc nội dung ngoài phạm vi đề tài. Không lặp lại cùng một thông tin ở nhiều mục.
