@@ -153,6 +153,41 @@ def add_math(paragraph, latex):
         root = etree.fromstring(wrapper.encode("utf-8"))
         if len(root) == 0:
             raise ValueError("Không tạo được phần tử OMML từ MathML.")
+
+        # Word shows a dotted placeholder when an optional math slot is empty
+        # but its corresponding *Hide property is not enabled. This commonly
+        # happens for square roots (empty radical degree) and n-ary operators
+        # such as a summation with only a lower limit (empty upper limit).
+        ns = {"m": namespace}
+
+        def is_empty_math_slot(element):
+            return element is not None and len(element) == 0 and not (element.text or "").strip()
+
+        def set_hide_property(properties, tag):
+            prop = properties.find(f"m:{tag}", namespaces=ns)
+            if prop is None:
+                prop = etree.SubElement(properties, f"{{{namespace}}}{tag}")
+            prop.set(f"{{{namespace}}}val", "1")
+
+        for radical in root.xpath(".//m:rad", namespaces=ns):
+            degree = radical.find("m:deg", namespaces=ns)
+            if is_empty_math_slot(degree):
+                radical_properties = radical.find("m:radPr", namespaces=ns)
+                if radical_properties is None:
+                    radical_properties = etree.Element(f"{{{namespace}}}radPr")
+                    radical.insert(0, radical_properties)
+                set_hide_property(radical_properties, "degHide")
+
+        for nary in root.xpath(".//m:nary", namespaces=ns):
+            nary_properties = nary.find("m:naryPr", namespaces=ns)
+            if nary_properties is None:
+                nary_properties = etree.Element(f"{{{namespace}}}naryPr")
+                nary.insert(0, nary_properties)
+            for slot_name, hide_name in (("sub", "subHide"), ("sup", "supHide")):
+                slot = nary.find(f"m:{slot_name}", namespaces=ns)
+                if is_empty_math_slot(slot):
+                    set_hide_property(nary_properties, hide_name)
+
         paragraph._p.append(root[0])
     except Exception as exc:
         raise ValueError(f"Không chuyển được công thức LaTeX sang Word: {latex!r}") from exc
