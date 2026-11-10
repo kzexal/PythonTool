@@ -22,6 +22,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+from latex2mathml import converter as latex_converter
+import mathml2omml
+from lxml import etree
 
 HEADING_RE = re.compile(r'^(#{1,9})\s+(.+?)\s*#*\s*$')
 IMAGE_RE = re.compile(r'^!\[(.*?)\]\((.+?)\)\s*$')
@@ -133,6 +136,20 @@ def add_hyperlink(paragraph, text, url):
     r.append(rPr); t = OxmlElement('w:t'); t.text = text; r.append(t); hyperlink.append(r)
     paragraph._p.append(hyperlink)
 
+
+
+def add_math(paragraph, latex):
+    """Convert a LaTeX expression to native editable Word OMML and append it."""
+    latex = latex.strip()
+    if not latex:
+        return
+    try:
+        mathml = latex_converter.convert(latex)
+        omml = mathml2omml.convert(mathml)
+        element = etree.fromstring(omml.encode("utf-8"))
+        paragraph._p.append(element)
+    except Exception as exc:
+        raise ValueError(f"Không chuyển được công thức LaTeX sang Word: {latex!r}") from exc
 
 def add_inline(paragraph, text, citation_numbers):
     """Render Markdown inline text and convert inline $...$ to Word math."""
