@@ -3,6 +3,6 @@ Tiêu đề chương	# CHƯƠNG 1. MỞ ĐẦU
 Tiêu đề mục	## 1.1 Đặt vấn đề
 Tiêu đề mục con	### 1.1.1 Mục tiêu
 In đậm	**Nội dung**
-Chèn hình	![Sơ đồ khối](../images/so_do.png)
+Chèn hình	![Mô tả hình](..\images\edge betweeness.png) — thay edge betweeness.png bằng tên file ảnh thực tế
 Chú thích bảng	Table: Thông số kỹ thuật
 Trích dẫn	[@esp32]
