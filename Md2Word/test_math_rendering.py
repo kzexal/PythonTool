@@ -17,13 +17,13 @@ class MathRenderingTests(unittest.TestCase):
     def test_fraction_and_sum_convert_to_omml(self):
         doc = Document()
         paragraph = doc.add_paragraph()
-        build_report.add_math(paragraph, r"\\frac{\\sum_i x_i}{n}")
+        build_report.add_math(paragraph, r"\frac{\sum_i x_i}{n}")
         self.assertEqual(len(list(paragraph._p.iter(qn('m:oMath')))), 1)
 
     def test_invalid_latex_raises_clear_error(self):
         doc = Document()
         with self.assertRaisesRegex(ValueError, "Không chuyển đổi được công thức LaTeX"):
-            build_report.add_math(doc.add_paragraph(), r"\\notAValidCommand{abc}")
+            build_report.add_math(doc.add_paragraph(), r"\notAValidCommand{abc}")
 
 
 if __name__ == '__main__':
